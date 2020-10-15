@@ -45,7 +45,7 @@ const FindClosestCountry = () => {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Typography>Find Closest Countries</Typography>
+        <Typography>Find Closest Country</Typography>
         <br />
         <TextField
           label="Country (Country Code)"
