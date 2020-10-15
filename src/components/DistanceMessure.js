@@ -58,6 +58,7 @@ const DistanceMessure = () => {
         <br />
         <TextField
           label="From (Country Code)"
+          inputProps={{ maxLength: 3 }}
           value={from}
           onChange={(e) => handleFrom(e.target.value)}
           variant="outlined"
@@ -66,6 +67,7 @@ const DistanceMessure = () => {
         <br />
         <TextField
           label="To (Country Code)"
+          inputProps={{ maxLength: 3 }}
           value={to}
           onChange={(e) => handleTo(e.target.value)}
           variant="outlined"
