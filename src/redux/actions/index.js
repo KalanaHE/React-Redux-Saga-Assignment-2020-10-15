@@ -11,3 +11,17 @@ export const receiveDistance = (data) => {
     payload: data,
   };
 };
+
+export const requestSearchByName = (data) => {
+  return {
+    type: "REQUEST_SEARCH_COUNTRIES_BY_NAME",
+    payload: data,
+  };
+};
+
+export const receiveSearchByName = (data) => {
+  return {
+    type: "RECEIVE_SEARCH_COUNTRIES_BY_NAME",
+    payload: data,
+  };
+};
