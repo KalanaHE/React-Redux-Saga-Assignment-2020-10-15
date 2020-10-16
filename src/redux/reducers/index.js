@@ -3,8 +3,8 @@ import getDistance from "./distance";
 import getCountriesByName from "./searchCountriesByName";
 
 const rootReducer = combineReducers({
-  getDistance: getDistance,
-  getCountriesByName: getCountriesByName,
+  Distance: getDistance,
+  CountriesByName: getCountriesByName,
 });
 
 export default rootReducer;

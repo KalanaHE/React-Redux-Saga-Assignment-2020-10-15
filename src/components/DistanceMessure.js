@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 });
 
 const DistanceMessure = () => {
-  const distance = useSelector((state) => state.getDistance);
+  const distance = useSelector((state) => state.Distance);
 
   const dispatch = useDispatch();
   const classes = useStyles();

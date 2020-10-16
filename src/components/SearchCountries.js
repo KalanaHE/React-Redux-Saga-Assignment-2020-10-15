@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 });
 
 const SearchCountries = () => {
-  const countries = useSelector((state) => state.getCountriesByName);
+  const countries = useSelector((state) => state.CountriesByName);
 
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -41,7 +41,6 @@ const SearchCountries = () => {
       country: country,
     };
     dispatch(requestSearchByName(state));
-    // console.log(state);
   };
 
   return (
@@ -69,7 +68,9 @@ const SearchCountries = () => {
         <br />
         {countries === 0
           ? "Enter a keyword to search countries"
-          : JSON.stringify(countries)}
+          : countries.map((country) => {
+              return <h3 key={country.code}>{country.name}</h3>;
+            })}
       </CardContent>
     </Card>
   );
