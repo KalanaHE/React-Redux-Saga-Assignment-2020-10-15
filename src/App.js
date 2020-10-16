@@ -5,6 +5,7 @@ import { Container } from "@material-ui/core";
 import NavBar from "./components/NavBar";
 import DistanceMessure from "./components/DistanceMessure";
 import SearchCountries from "./components/SearchCountries";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
 
         <Container maxWidth="lg">
           <Switch>
-            <Route exact path="/" />
+            <Route exact path="/" component={Home} />
             <Route path="/distance" component={DistanceMessure} />
             <Route path="/searchname" component={SearchCountries} />
           </Switch>
