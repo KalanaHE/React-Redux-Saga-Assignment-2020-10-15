@@ -11,6 +11,8 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import { useDispatch } from "react-redux";
+import CountryListItem from "./CountryListItem";
+import ListContainer from "./ListContainer";
 
 const useStyles = makeStyles({
   root: {
@@ -50,7 +52,7 @@ const SearchCountries = () => {
         <br />
         <TextField
           label="Country (Country Code)"
-          inputProps={{ maxLength: 3 }}
+          inputProps={{ maxLength: 2 }}
           value={country}
           onChange={(e) => handleCountry(e.target.value)}
           variant="outlined"
@@ -66,11 +68,19 @@ const SearchCountries = () => {
         </Button>
         <br />
         <br />
-        {countries === 0
-          ? "Enter a keyword to search countries"
-          : countries.map((country) => {
-              return <h3 key={country.code}>{country.name}</h3>;
-            })}
+        <ListContainer>
+          {countries === 0
+            ? "Enter a keyword to search countries"
+            : countries.map((country) => {
+                return (
+                  <CountryListItem
+                    code={country.code}
+                    country={country.name}
+                    key={country.code}
+                  />
+                );
+              })}
+        </ListContainer>
       </CardContent>
     </Card>
   );

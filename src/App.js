@@ -8,8 +8,9 @@ import SearchCountries from "./components/SearchCountries";
 function App() {
   return (
     <div className="App">
+      <NavBar />
+      <br />
       <Container maxWidth="lg">
-        <NavBar />
         <DistanceMessure />
         <br /> <br />
         <SearchCountries />
