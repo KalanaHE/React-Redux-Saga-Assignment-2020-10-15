@@ -25,9 +25,14 @@ function* getDistance(action) {
       "K"
     );
     // console.log(distanceink);
-    yield put(receiveDistance(distanceink));
+    yield put(receiveDistance(distanceink + " KM"));
   } catch (e) {
-    console.log(e);
+    // console.log(e);
+    yield put(
+      receiveDistance(
+        "Error calculationg distance. please enter valid country codes!"
+      )
+    );
   }
 }
 

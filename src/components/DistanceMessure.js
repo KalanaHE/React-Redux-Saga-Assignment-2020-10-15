@@ -82,7 +82,9 @@ const DistanceMessure = () => {
         </Button>
         <br />
         <br />
-        {distance === "" ? "null" : JSON.stringify(distance) + " KM"}
+        {distance === 0
+          ? "Enter two country codes to meassure distance"
+          : JSON.stringify(distance)}
       </CardContent>
     </Card>
   );
