@@ -1,13 +1,13 @@
-export const requestAPIData = (data) => {
+export const requestDistance = (data) => {
   return {
-    type: "REQUEST_API_DATA",
+    type: "REQUEST_DISTANCE",
     payload: data,
   };
 };
 
-export const receiveAPIData = (data) => {
+export const receiveDistance = (data) => {
   return {
-    type: "RECEIVE_API_DATA",
+    type: "RECEIVE_DISTANCE",
     payload: data,
   };
 };

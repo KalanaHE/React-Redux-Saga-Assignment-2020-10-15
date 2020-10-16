@@ -1,4 +1,4 @@
-export const fetchDistance = async (coordinates) => {
+export const fetchApi = async (coordinates) => {
   try {
     const response = await fetch("https://restcountries.eu/rest/v2/all");
     const data = await response.json();

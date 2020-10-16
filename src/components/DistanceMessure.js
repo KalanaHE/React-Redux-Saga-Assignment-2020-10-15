@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { requestAPIData } from "../redux/actions";
+import { requestDistance } from "../redux/actions";
 
 import {
   Card,
@@ -25,8 +25,7 @@ const useStyles = makeStyles({
 });
 
 const DistanceMessure = () => {
-  const distance = useSelector((state) => state.fetchDistance);
-  // console.log(JSON.stringify(distance));
+  const distance = useSelector((state) => state.getDistance);
 
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -47,7 +46,7 @@ const DistanceMessure = () => {
       from: from,
       to: to,
     };
-    dispatch(requestAPIData(state));
+    dispatch(requestDistance(state));
     // console.log(state);
   };
 

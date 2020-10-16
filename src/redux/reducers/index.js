@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import fetchDistance from "./api";
+import getDistance from "./distance";
 
 const rootReducer = combineReducers({
-  fetchDistance: fetchDistance,
+  getDistance: getDistance,
 });
 
 export default rootReducer;

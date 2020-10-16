@@ -1,6 +1,6 @@
-export default (state = {}, action) => {
+export default (state = 0, action) => {
   switch (action.type) {
-    case "RECEIVE_API_DATA":
+    case "RECEIVE_DISTANCE":
       return (state = action.payload);
     default:
       return state;
