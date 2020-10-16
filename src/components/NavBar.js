@@ -1,5 +1,12 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, makeStyles } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  makeStyles,
+  Button,
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,11 +24,19 @@ const NavBar = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ background: "teal" }}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             REACT-REDUX-SAGA-Assignment
           </Typography>
+
+          <Button color="secondary">
+            <Link to={"/distance"}>Distance Meassure</Link>
+          </Button>
+          <Button color="secondary">
+            <Link to={"/searchname"}>Search Countries</Link>
+          </Button>
+          <Button color="secondary">Login</Button>
         </Toolbar>
       </AppBar>
     </div>

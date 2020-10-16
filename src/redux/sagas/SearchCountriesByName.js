@@ -11,18 +11,18 @@ export default function* getCountriesByName(action) {
     const data = yield call(fetchApi);
 
     const countries = data.map((country) => {
-      return { name: country.name, code: country.alpha2Code };
+      return { name: country.name.toUpperCase(), code: country.alpha2Code };
     });
 
     const filtered = countries.filter((country) => {
-      return country.code.includes(searchkey);
+      return country.name.includes(searchkey);
     });
 
     yield put(receiveSearchByName(filtered));
   } catch (e) {
     // console.log(e);
     yield put(
-      receiveSearchByName("Error searching please enter valid keyword!")
+      receiveSearchByName("Error searching! please enter valid keyword!")
     );
   }
 }
