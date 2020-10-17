@@ -15,7 +15,7 @@ export default function* getCountriesByName(action) {
     });
 
     const filtered = countries.filter((country) => {
-      return country.name.includes(searchkey);
+      return country.name.includes(searchkey.toUpperCase());
     });
 
     yield put(receiveSearchByName(filtered));

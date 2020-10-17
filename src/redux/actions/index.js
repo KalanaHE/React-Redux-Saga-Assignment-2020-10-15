@@ -25,3 +25,17 @@ export const receiveSearchByName = (data) => {
     payload: data,
   };
 };
+
+export const requestSearchByTime = (data) => {
+  return {
+    type: "REQUEST_SEARCH_COUNTRIES_BY_TIME",
+    payload: data,
+  };
+};
+
+export const receiveSearchByTime = (data) => {
+  return {
+    type: "RECEIVE_SEARCH_COUNTRIES_BY_TIME",
+    payload: data,
+  };
+};
