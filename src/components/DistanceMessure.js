@@ -26,6 +26,7 @@ const useStyles = makeStyles({
 
 const DistanceMessure = () => {
   const distance = useSelector((state) => state.Distance);
+  const login = useSelector((state) => state.isLogged);
 
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -53,38 +54,44 @@ const DistanceMessure = () => {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Typography>Meassure Distance Between Two Countries</Typography>
-        <br />
-        <TextField
-          label="From (Country Code)"
-          inputProps={{ maxLength: 3 }}
-          value={from}
-          onChange={(e) => handleFrom(e.target.value)}
-          variant="outlined"
-        />
-        <br />
-        <br />
-        <TextField
-          label="To (Country Code)"
-          inputProps={{ maxLength: 3 }}
-          value={to}
-          onChange={(e) => handleTo(e.target.value)}
-          variant="outlined"
-        />
-        <br />
-        <br />
-        <Button
-          variant="contained"
-          onClick={() => handleButtonClick()}
-          color="secondary"
-        >
-          Meassure Distance
-        </Button>
-        <br />
-        <br />
-        {distance === 0
-          ? "Enter two country codes to meassure distance"
-          : JSON.stringify(distance)}
+        {login ? (
+          <div>
+            <Typography>Meassure Distance Between Two Countries</Typography>
+            <br />
+            <TextField
+              label="From (Country Code)"
+              inputProps={{ maxLength: 3 }}
+              value={from}
+              onChange={(e) => handleFrom(e.target.value)}
+              variant="outlined"
+            />
+            <br />
+            <br />
+            <TextField
+              label="To (Country Code)"
+              inputProps={{ maxLength: 3 }}
+              value={to}
+              onChange={(e) => handleTo(e.target.value)}
+              variant="outlined"
+            />
+            <br />
+            <br />
+            <Button
+              variant="contained"
+              onClick={() => handleButtonClick()}
+              color="secondary"
+            >
+              Meassure Distance
+            </Button>
+            <br />
+            <br />
+            {distance === 0
+              ? "Enter two country codes to meassure distance"
+              : JSON.stringify(distance)}
+          </div>
+        ) : (
+          <h2>Content Hidden! Log in to see the content!</h2>
+        )}
       </CardContent>
     </Card>
   );

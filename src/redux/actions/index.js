@@ -39,3 +39,10 @@ export const receiveSearchByTime = (data) => {
     payload: data,
   };
 };
+
+export const changeLoginState = (data) => {
+  return {
+    type: "CHANGE_LOGIN_STATE",
+    payload: data,
+  };
+};

@@ -28,6 +28,7 @@ const useStyles = makeStyles({
 
 const SearchCountries = () => {
   const countries = useSelector((state) => state.CountriesByName);
+  const login = useSelector((state) => state.isLogged);
 
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -48,39 +49,45 @@ const SearchCountries = () => {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Typography>Search Countries</Typography>
-        <br />
-        <TextField
-          label="Country (Country Code)"
-          inputProps={{ maxLength: 2 }}
-          value={country}
-          onChange={(e) => handleCountry(e.target.value)}
-          variant="outlined"
-        />
-        <br />
-        <br />
-        <Button
-          variant="contained"
-          onClick={() => handleButtonClick()}
-          color="secondary"
-        >
-          Search
-        </Button>
-        <br />
-        <br />
-        <ListContainer>
-          {countries === 0
-            ? "Enter a keyword to search countries"
-            : countries.map((country) => {
-                return (
-                  <CountryListItem
-                    code={country.code}
-                    country={country.name}
-                    key={country.code}
-                  />
-                );
-              })}
-        </ListContainer>
+        {login ? (
+          <div>
+            <Typography>Search Countries</Typography>
+            <br />
+            <TextField
+              label="Country (Country Code)"
+              inputProps={{ maxLength: 2 }}
+              value={country}
+              onChange={(e) => handleCountry(e.target.value)}
+              variant="outlined"
+            />
+            <br />
+            <br />
+            <Button
+              variant="contained"
+              onClick={() => handleButtonClick()}
+              color="secondary"
+            >
+              Search
+            </Button>
+            <br />
+            <br />
+            <ListContainer>
+              {countries === 0
+                ? "Enter a keyword to search countries"
+                : countries.map((country) => {
+                    return (
+                      <CountryListItem
+                        code={country.code}
+                        country={country.name}
+                        key={country.code}
+                      />
+                    );
+                  })}
+            </ListContainer>
+          </div>
+        ) : (
+          <h2>Content Hidden! Log in to see the content!</h2>
+        )}
       </CardContent>
     </Card>
   );
