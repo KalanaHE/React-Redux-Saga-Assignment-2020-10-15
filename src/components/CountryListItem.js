@@ -1,13 +1,16 @@
 import React from "react";
 
-import { ListItem, ListItemText } from "@material-ui/core";
+import {
+  ListItem as listitem,
+  ListItemText as listitemtext,
+} from "@material-ui/core";
 
 const CountryListItem = ({ code, country }) => {
   return (
     <div>
-      <ListItem>
-        <ListItemText primary={country} />
-      </ListItem>
+      <listitem>
+        <listitemtext primary={country} />
+      </listitem>
     </div>
   );
 };

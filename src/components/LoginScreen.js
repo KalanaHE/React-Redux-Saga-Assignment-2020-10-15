@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { Paper, Grid, TextField, Button } from "@material-ui/core";
+import {
+  Paper as paper,
+  Grid as grid,
+  TextField as textfield,
+  Button as button,
+} from "@material-ui/core";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -21,11 +26,11 @@ const Login = () => {
   };
 
   return (
-    <Paper style={{ padding: 20, width: "50%" }}>
+    <paper style={{ padding: 20, width: "50%" }}>
       <div>
-        <Grid container spacing={8} alignItems="flex-end">
-          <Grid item md={true} sm={true} xs={true}>
-            <TextField
+        <grid container spacing={8} alignItems="flex-end">
+          <grid item md={true} sm={true} xs={true}>
+            <textfield
               id="username"
               label="Username"
               variant="outlined"
@@ -36,11 +41,11 @@ const Login = () => {
               autoFocus
               required
             />
-          </Grid>
-        </Grid>
-        <Grid container spacing={8} alignItems="flex-end">
-          <Grid item md={true} sm={true} xs={true}>
-            <TextField
+          </grid>
+        </grid>
+        <grid container spacing={8} alignItems="flex-end">
+          <grid item md={true} sm={true} xs={true}>
+            <textfield
               id="password"
               label="Password"
               type="password"
@@ -50,32 +55,32 @@ const Login = () => {
               fullWidth
               required
             />
-          </Grid>
-        </Grid>
-        <Grid container alignItems="center" justify="space-between">
-          <Grid item>
-            <Button
+          </grid>
+        </grid>
+        <grid container alignItems="center" justify="space-between">
+          <grid item>
+            <button
               disableFocusRipple
               disableRipple
               style={{ textTransform: "none" }}
               variant="text"
               color="primary"
-            ></Button>
-          </Grid>
-        </Grid>
-        <Grid container justify="center" style={{ marginTop: "10px" }}>
-          <Button
+            ></button>
+          </grid>
+        </grid>
+        <grid container justify="center" style={{ marginTop: "10px" }}>
+          <button
             variant="outlined"
             color="primary"
             onClick={loginHandler}
             style={{ textTransform: "none" }}
           >
             Login
-          </Button>
+          </button>
           {/* {isLogged ? "logged" : "not logged"} */}
-        </Grid>
+        </grid>
       </div>
-    </Paper>
+    </paper>
   );
 };
 

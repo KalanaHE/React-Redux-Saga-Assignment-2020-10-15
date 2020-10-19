@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 import {
-  Card,
-  CardContent,
-  Button,
-  TextField,
+  Card as card,
+  CardContent as cardcontent,
+  Button as button,
+  TextField as textfield,
   Typography,
   makeStyles,
 } from "@material-ui/core";
@@ -45,43 +45,45 @@ const DistanceMessure = () => {
   };
 
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <div>
-          <Typography className="ss">
-            Meassure Distance Between Two Countries
-          </Typography>
-          <br />
-          <TextField
-            label="From (Country Code)"
-            inputProps={{ maxLength: 3 }}
-            value={from}
-            onChange={(e) => handleFrom(e.target.value)}
-            variant="outlined"
-          />
-          <br />
-          <br />
-          <TextField
-            label="To (Country Code)"
-            inputProps={{ maxLength: 3 }}
-            value={to}
-            onChange={(e) => handleTo(e.target.value)}
-            variant="outlined"
-          />
-          <br />
-          <br />
-          <Button
-            variant="contained"
-            onClick={() => handleButtonClick()}
-            color="secondary"
-          >
-            Meassure Distance
-          </Button>
-          <br />
-          <br />
-        </div>
-      </CardContent>
-    </Card>
+    <div>
+      <card className={classes.root}>
+        <cardcontent>
+          <div>
+            <Typography className="ss">
+              Meassure Distance Between Two Countries
+            </Typography>
+            <br />
+            <textfield
+              label="From (Country Code)"
+              inputProps={{ maxLength: 3 }}
+              value={from}
+              onChange={(e) => handleFrom(e.target.value)}
+              variant="outlined"
+            />
+            <br />
+            <br />
+            <textfield
+              label="To (Country Code)"
+              inputProps={{ maxLength: 3 }}
+              value={to}
+              onChange={(e) => handleTo(e.target.value)}
+              variant="outlined"
+            />
+            <br />
+            <br />
+            <button
+              variant="contained"
+              onClick={() => handleButtonClick()}
+              color="secondary"
+            >
+              Meassure Distance
+            </button>
+            <br />
+            <br />
+          </div>
+        </cardcontent>
+      </card>
+    </div>
   );
 };
 
