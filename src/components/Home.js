@@ -20,7 +20,7 @@ const Home = () => {
           reaching
         </p>
       ) : (
-        <h2>Content Hidden! Log in to see the content!</h2>
+        <h2 className="msg">Content Hidden! Log in to see the content!</h2>
       )}
       <br />
       <br />
