@@ -82,6 +82,7 @@ const Login = () => {
           </Button> */}
           {login ? (
             <Button
+              variant="contained"
               color="secondary"
               onClick={() => dispatch(changeLoginState(false))}
             >
@@ -89,7 +90,8 @@ const Login = () => {
             </Button>
           ) : (
             <Button
-              color="secondary"
+              variant="contained"
+              color="primary"
               onClick={() => dispatch(changeLoginState(true))}
             >
               login
