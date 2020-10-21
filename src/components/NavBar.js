@@ -8,10 +8,6 @@ import {
   Button,
 } from "@material-ui/core";
 
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { changeLoginState } from "../redux/actions";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -25,9 +21,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const NavBar = () => {
-  const login = useSelector((state) => state.isLogged);
-  const dispatch = useDispatch();
-
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -51,22 +44,6 @@ const NavBar = () => {
           <Button color="secondary">
             <Link to={"/searchclosest"}>Search Closest</Link>
           </Button>
-
-          {login ? (
-            <Button
-              color="secondary"
-              onClick={() => dispatch(changeLoginState(false))}
-            >
-              Logout
-            </Button>
-          ) : (
-            <Button
-              color="secondary"
-              onClick={() => dispatch(changeLoginState(true))}
-            >
-              login
-            </Button>
-          )}
         </Toolbar>
       </AppBar>
     </div>

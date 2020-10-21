@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import {
-  Paper as paper,
-  Grid as grid,
-  TextField as textfield,
-  Button as button,
-} from "@material-ui/core";
+import { Paper, Grid, TextField, Button } from "@material-ui/core";
+
+import { useDispatch } from "react-redux";
+import { changeLoginState } from "../redux/actions";
+import { useSelector } from "react-redux";
 
 const Login = () => {
+  const dispatch = useDispatch();
+
+  const login = useSelector((state) => state.isLogged);
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -26,11 +29,11 @@ const Login = () => {
   };
 
   return (
-    <paper style={{ padding: 20, width: "50%" }}>
+    <Paper style={{ padding: 20, width: "50%" }}>
       <div>
-        <grid container spacing={8} alignItems="flex-end">
-          <grid item md={true} sm={true} xs={true}>
-            <textfield
+        <Grid container spacing={8} alignItems="flex-end">
+          <Grid item md={true} sm={true} xs={true}>
+            <TextField
               id="username"
               label="Username"
               variant="outlined"
@@ -41,11 +44,11 @@ const Login = () => {
               autoFocus
               required
             />
-          </grid>
-        </grid>
-        <grid container spacing={8} alignItems="flex-end">
-          <grid item md={true} sm={true} xs={true}>
-            <textfield
+          </Grid>
+        </Grid>
+        <Grid container spacing={8} alignItems="flex-end">
+          <Grid item md={true} sm={true} xs={true}>
+            <TextField
               id="password"
               label="Password"
               type="password"
@@ -55,32 +58,46 @@ const Login = () => {
               fullWidth
               required
             />
-          </grid>
-        </grid>
-        <grid container alignItems="center" justify="space-between">
-          <grid item>
-            <button
+          </Grid>
+        </Grid>
+        <Grid container alignItems="center" justify="space-between">
+          <Grid item>
+            <Button
               disableFocusRipple
               disableRipple
               style={{ textTransform: "none" }}
               variant="text"
               color="primary"
-            ></button>
-          </grid>
-        </grid>
-        <grid container justify="center" style={{ marginTop: "10px" }}>
-          <button
+            ></Button>
+          </Grid>
+        </Grid>
+        <Grid container justify="center" style={{ marginTop: "10px" }}>
+          <Button
             variant="outlined"
             color="primary"
             onClick={loginHandler}
             style={{ textTransform: "none" }}
           >
             Login
-          </button>
-          {/* {isLogged ? "logged" : "not logged"} */}
-        </grid>
+          </Button>
+          {login ? (
+            <Button
+              color="secondary"
+              onClick={() => dispatch(changeLoginState(false))}
+            >
+              Logout
+            </Button>
+          ) : (
+            <Button
+              color="secondary"
+              onClick={() => dispatch(changeLoginState(true))}
+            >
+              login
+            </Button>
+          )}
+        </Grid>
       </div>
-    </paper>
+    </Paper>
   );
 };
 

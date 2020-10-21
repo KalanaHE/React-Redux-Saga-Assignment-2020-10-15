@@ -1,5 +1,4 @@
 import { call, put } from "redux-saga/effects";
-import moment from "moment";
 
 import { receiveSearchByTime } from "../actions";
 import { fetchApi } from "../../api/api";
