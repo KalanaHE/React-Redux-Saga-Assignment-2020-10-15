@@ -9,7 +9,6 @@ export default function* getDistance(action) {
   try {
     const data = yield call(fetchApi);
 
-    // console.log(data);
     const closest = GetClosestCountry(data, action.payload.country);
 
     yield put(receiveClosestCountry(closest));
@@ -17,7 +16,7 @@ export default function* getDistance(action) {
     // console.log(e);
     yield put(
       receiveClosestCountry(
-        "Error getting closest country. please enter valid country code!"
+        "Error getting closest country. please enter valid country code (EX: India => IND)!"
       )
     );
   }

@@ -49,7 +49,7 @@ const ClosestCountry = () => {
       <CardContent>
         {login ? (
           <div>
-            <Typography>Search Closest Country</Typography>
+            <Typography>Find Closest Country</Typography>
             <br />
             <TextField
               label="Country (Country Code)"
@@ -65,11 +65,13 @@ const ClosestCountry = () => {
               onClick={() => handleButtonClick()}
               color="secondary"
             >
-              Search
+              Find
             </Button>
             <br />
             <br />
-            <h1>{closest}</h1>
+            <h3>
+              {closest ? closest : "Enter a country code (Sri Lanka => LKA)"}
+            </h3>
           </div>
         ) : (
           <h2>Content Hidden! Log in to see the content!</h2>
