@@ -21,16 +21,17 @@ const Login = () => {
     setPassword(password);
   };
 
-  const loginHandler = () => {
-    const state = {
-      username: username,
-      password: password,
-    };
-  };
+  // const loginHandler = () => {
+  //   const state = {
+  //     username: username,
+  //     password: password,
+  //   };
+  // };
 
   return (
     <Paper style={{ padding: 20, width: "50%" }}>
       <div>
+        <h1>Login Page</h1>
         <Grid container spacing={8} alignItems="flex-end">
           <Grid item md={true} sm={true} xs={true}>
             <TextField
@@ -81,21 +82,20 @@ const Login = () => {
             Login
           </Button> */}
           {login ? (
-            <Button
-              variant="contained"
-              color="secondary"
+            <button
+              className="btn btn-primary"
               onClick={() => dispatch(changeLoginState(false))}
             >
               Logout
-            </Button>
+            </button>
           ) : (
-            <Button
+            <button
               variant="contained"
               color="primary"
               onClick={() => dispatch(changeLoginState(true))}
             >
               login
-            </Button>
+            </button>
           )}
         </Grid>
       </div>

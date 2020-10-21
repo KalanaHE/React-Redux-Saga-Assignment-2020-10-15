@@ -48,11 +48,11 @@ const DistanceMessure = () => {
       to: to,
     };
     dispatch(requestDistance(state));
-    // console.log(state);
   };
 
   return (
     <Card className={classes.root}>
+      <div>aaaa</div>
       <CardContent>
         {login ? (
           <div>

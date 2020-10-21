@@ -1,20 +1,59 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+
+import { Provider } from "react-redux";
+import configureStore from "redux-mock-store";
+import createSagaMiddleware from "redux-saga";
+
+import { mount, shallow } from "enzyme";
 
 import LoginScreen from "../components/LoginScreen";
 
-it("should have  2 text fileds and a button", () => {
-  const wrapper = shallow(<LoginScreen />);
+import sagas from "../redux/sagas";
 
-  const maindiv = wrapper.find("div");
-  const paper = wrapper.find("paper");
-  const grid = wrapper.find("grid");
-  const textfield = wrapper.find("textfield");
+configure({ adapter: new Adapter() });
 
-  expect(maindiv.exists()).toBe(true);
-  expect(paper.exists()).toBe(true);
-  expect(grid.exists()).toBe(true);
-  expect(textfield.exists()).toBe(true);
+const sagaMiddleware = createSagaMiddleware();
 
-  //   expect(LoginScreen.handleUsername()).toBeDefined();
+const mockstore = configureStore([sagaMiddleware]);
+
+describe("LoginScreen", () => {
+  it("Should render paragraph and text", () => {
+    const store = mockstore({
+      login: false,
+    });
+    sagaMiddleware.run(sagas);
+
+    const wrapper = mount(
+      <Provider store={store}>
+        <LoginScreen />
+      </Provider>
+    );
+
+    // const wrapper = shallow(
+    //   <Provider store={store}>
+    //     <LoginScreen />
+    //   </Provider>
+    // );
+
+    const text = wrapper.find("h1").text();
+    expect(text).toEqual("Login Page");
+  });
+  // ###########################################################################################
+  it("Should render a div and login button", () => {
+    const store = mockstore({
+      login: false,
+    });
+    sagaMiddleware.run(sagas);
+
+    const wrapper = mount(
+      <Provider store={store}>
+        <LoginScreen />
+      </Provider>
+    );
+
+    expect(wrapper.find("div").exists()).toBe(true);
+    expect(wrapper.find("button").exists()).toBe(true);
+  });
 });
