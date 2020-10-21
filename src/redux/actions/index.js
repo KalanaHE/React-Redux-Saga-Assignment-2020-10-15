@@ -46,3 +46,17 @@ export const changeLoginState = (data) => {
     payload: data,
   };
 };
+
+export const requestClosestCountry = (data) => {
+  return {
+    type: "REQUEST_SEARCH_CLOSEST_COUNTRY",
+    payload: data,
+  };
+};
+
+export const receiveClosestCountry = (data) => {
+  return {
+    type: "RECEIVE_SEARCH_CLOSEST_COUNTRY",
+    payload: data,
+  };
+};

@@ -8,6 +8,7 @@ import SearchCountries from "./components/SearchCountries";
 import Home from "./components/Home";
 // import Login from "./components/LoginScreen";
 import TimeRangeCountries from "./components/TimeRangeContries";
+import SearchClosest from "./components/ClosestCountry";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/distance" component={DistanceMessure} />
             <Route path="/searchname" component={SearchCountries} />
             <Route path="/timerange" component={TimeRangeCountries} />
+            <Route path="/searchclosest" component={SearchClosest} />
           </Switch>
         </Container>
       </div>

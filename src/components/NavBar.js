@@ -48,6 +48,9 @@ const NavBar = () => {
           <Button color="secondary">
             <Link to={"/timerange"}>Search Time Range</Link>
           </Button>
+          <Button color="secondary">
+            <Link to={"/searchclosest"}>Search Closest</Link>
+          </Button>
 
           {login ? (
             <Button

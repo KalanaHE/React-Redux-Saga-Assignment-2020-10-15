@@ -1,8 +1,8 @@
 import React from "react";
-import { List as list } from "@material-ui/core";
+import { List } from "@material-ui/core";
 
 const ListContainer = (props) => {
-  return <list>{props.children}</list>;
+  return <List>{props.children}</List>;
 };
 
 export default ListContainer;
