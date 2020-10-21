@@ -29,9 +29,7 @@ const NavBar = () => {
           <Typography variant="h6" className={classes.title}>
             REACT-REDUX-SAGA-Assignment
           </Typography>
-          <Button color="secondary">
-            <Link to={"/"}>Home</Link>
-          </Button>
+
           <Button color="secondary">
             <Link to={"/distance"}>Distance Meassure</Link>
           </Button>
