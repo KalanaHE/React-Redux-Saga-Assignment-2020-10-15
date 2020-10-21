@@ -72,14 +72,14 @@ const Login = () => {
           </Grid>
         </Grid>
         <Grid container justify="center" style={{ marginTop: "10px" }}>
-          <Button
+          {/* <Button
             variant="outlined"
             color="primary"
             onClick={loginHandler}
             style={{ textTransform: "none" }}
           >
             Login
-          </Button>
+          </Button> */}
           {login ? (
             <Button
               color="secondary"

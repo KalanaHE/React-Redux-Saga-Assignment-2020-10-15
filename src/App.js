@@ -10,7 +10,6 @@ import { Container } from "@material-ui/core";
 import NavBar from "./components/NavBar";
 import DistanceMessure from "./components/DistanceMessure";
 import SearchCountries from "./components/SearchCountries";
-import Home from "./components/Home";
 import Login from "./components/LoginScreen";
 import TimeRangeCountries from "./components/TimeRangeContries";
 import SearchClosest from "./components/ClosestCountry";
