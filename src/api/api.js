@@ -5,5 +5,6 @@ export const fetchApi = async (coordinates) => {
     return data;
   } catch (e) {
     console.log(e);
+    return "error";
   }
 };

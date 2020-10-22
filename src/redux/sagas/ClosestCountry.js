@@ -5,7 +5,7 @@ import { fetchApi } from "../../api/api";
 
 import GetClosestCountry from "../../Functions/GetClosestCountry";
 
-export default function* getDistance(action) {
+export default function* getClosest(action) {
   try {
     const data = yield call(fetchApi);
 

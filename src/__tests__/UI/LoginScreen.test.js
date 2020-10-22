@@ -8,9 +8,9 @@ import createSagaMiddleware from "redux-saga";
 
 import { mount, shallow } from "enzyme";
 
-import LoginScreen from "../components/LoginScreen";
+import LoginScreen from "../../components/LoginScreen";
 
-import sagas from "../redux/sagas";
+import sagas from "../../redux/sagas";
 
 configure({ adapter: new Adapter() });
 

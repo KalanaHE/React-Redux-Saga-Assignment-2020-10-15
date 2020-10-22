@@ -8,9 +8,9 @@ import createSagaMiddleware from "redux-saga";
 
 import Enzyme, { mount, shallow } from "enzyme";
 
-import DistanceMeasure from "../components/DistanceMessure";
+import DistanceMeasure from "../../components/DistanceMessure";
 
-import sagas from "../redux/sagas";
+import sagas from "../../redux/sagas";
 
 Enzyme.configure({ adapter: new Adapter() });
 
