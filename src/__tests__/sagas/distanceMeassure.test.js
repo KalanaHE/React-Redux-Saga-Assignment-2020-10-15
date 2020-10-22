@@ -1,19 +1,19 @@
 import { call, put } from "redux-saga/effects";
 import { cloneableGenerator } from "@redux-saga/testing-utils";
 
-import getClosest from "../../redux/sagas/ClosestCountry";
+import getDistance from "../../redux/sagas/DistanceMeassure";
 import { fetchApi } from "../../api/api";
 
-describe("Get Closest Country", () => {
+describe("Get Distance between two countries", () => {
   it("First step done value should be false", () => {
-    const gen = cloneableGenerator(getClosest)();
+    const gen = cloneableGenerator(getDistance)();
     const result1 = gen.next();
 
     expect(result1.done).toBe(false);
   });
 
   it("Second step done value should be false", () => {
-    const gen = cloneableGenerator(getClosest)();
+    const gen = cloneableGenerator(getDistance)();
     gen.next();
     const result2 = gen.next();
 
@@ -21,7 +21,7 @@ describe("Get Closest Country", () => {
   });
 
   it("Third step done value should be true", () => {
-    const gen = cloneableGenerator(getClosest)();
+    const gen = cloneableGenerator(getDistance)();
     gen.next();
     gen.next();
     const result3 = gen.next();
