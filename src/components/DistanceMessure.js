@@ -52,11 +52,10 @@ const DistanceMessure = () => {
 
   return (
     <Card className={classes.root}>
-      <div>aaaa</div>
       <CardContent>
         {login ? (
           <div>
-            <Typography>Meassure Distance Between Two Countries</Typography>
+            <div className="tt">Meassure Distance Between Two Countries</div>
             <br />
             <TextField
               label="From (Country Code)"
@@ -77,6 +76,7 @@ const DistanceMessure = () => {
             <br />
             <br />
             <Button
+              className="butn"
               variant="contained"
               onClick={() => handleButtonClick()}
               color="secondary"

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Action RECEIVE_DISTANCE Dispatches the correct action and payload 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "from": "LK",
+      "to": "IN",
+    },
+    "type": "RECEIVE_DISTANCE",
+  },
+]
+`;
